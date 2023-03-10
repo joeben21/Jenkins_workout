@@ -1,0 +1,89 @@
+Console Output 
+
+11:38:41 Started by user admin
+11:38:41 Running as SYSTEM
+11:38:41 Building in workspace /var/jenkins_home/workspace/jenkins
+11:38:41 [WS-CLEANUP] Deleting project workspace...
+11:38:41 [WS-CLEANUP] Deferred wipeout is used...
+11:38:41 [WS-CLEANUP] Done
+11:38:41 The recommended git tool is: NONE
+11:38:41 No credentials specified
+11:38:41 Cloning the remote Git repository
+11:38:41 Cloning repository https://github.com/joeben21/git-with-jenkins.git
+11:38:41  > git init /var/jenkins_home/workspace/jenkins # timeout=10
+11:38:41 Fetching upstream changes from https://github.com/joeben21/git-with-jenkins.git
+11:38:41  > git --version # timeout=10
+11:38:41  > git --version # 'git version 2.30.2'
+11:38:41  > git fetch --tags --force --progress -- https://github.com/joeben21/git-with-jenkins.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+11:38:42  > git config remote.origin.url https://github.com/joeben21/git-with-jenkins.git # timeout=10
+11:38:42  > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+11:38:42 Avoid second fetch
+11:38:42  > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+11:38:42 Checking out Revision d2486f83d12d0ab160dc46e3558d38dba57bb415 (refs/remotes/origin/main)
+11:38:42  > git config core.sparsecheckout # timeout=10
+11:38:42  > git checkout -f d2486f83d12d0ab160dc46e3558d38dba57bb415 # timeout=10
+11:38:42 Commit message: "Update Dockerfile"
+11:38:42  > git rev-list --no-walk d2486f83d12d0ab160dc46e3558d38dba57bb415 # timeout=10
+11:38:42 [jenkins] $ /bin/sh -xe /tmp/jenkins8486247593314431725.sh
+11:38:42 + ls
+11:38:42 26-Feb-23 CICD Jenkins.txt
+11:38:42 Dockerfile
+11:38:42 README.md
+11:38:42 newtestfile
+11:38:42 testforcommit.txt
+11:38:42 + scp -o StrictHostKeyChecking=no -i **** Dockerfile ubuntu@13.231.35.35:/home/ubuntu/
+11:38:43 + ssh -o StrictHostKeyChecking=no -i **** ubuntu@13.231.35.35
+11:38:43 Pseudo-terminal will not be allocated because stdin is not a terminal.
+11:38:43 Welcome to Ubuntu 22.04.1 LTS (GNU/Linux 5.15.0-1028-aws x86_64)
+11:38:43 
+11:38:43  * Documentation:  https://help.ubuntu.com
+11:38:43  * Management:     https://landscape.canonical.com
+11:38:43  * Support:        https://ubuntu.com/advantage
+11:38:43 
+11:38:43   System information as of Fri Mar 10 06:08:42 UTC 2023
+11:38:43 
+11:38:43   System load:  0.0107421875      Processes:                103
+11:38:43   Usage of /:   30.8% of 7.57GB   Users logged in:          1
+11:38:43   Memory usage: 31%               IPv4 address for docker0: 172.17.0.1
+11:38:43   Swap usage:   0%                IPv4 address for eth0:    172.31.11.198
+11:38:43 
+11:38:43 
+11:38:43  * Introducing Expanded Security Maintenance for Applications.
+11:38:43    Receive updates to over 25,000 software packages with your
+11:38:43    Ubuntu Pro subscription. Free for personal use.
+11:38:43 
+11:38:43      https://ubuntu.com/aws/pro
+11:38:43 
+11:38:43 Expanded Security Maintenance for Applications is not enabled.
+11:38:43 
+11:38:43 48 updates can be applied immediately.
+11:38:43 26 of these updates are standard security updates.
+11:38:43 To see these additional updates run: apt list --upgradable
+11:38:43 
+11:38:43 Enable ESM Apps to receive additional future security updates.
+11:38:43 See https://ubuntu.com/esm or run: sudo pro status
+11:38:43 
+11:38:43 
+11:38:43 Dockerfile
+11:38:43 Sending build context to Docker daemon  14.85kB
+
+11:38:43 Step 1/4 : FROM ubuntu
+11:38:43  ---> 74f2314a03de
+11:38:43 Step 2/4 : RUN apt update -y
+11:38:43  ---> Using cache
+11:38:43  ---> 192cf56306aa
+11:38:43 Step 3/4 : RUN apt install -y nginx
+11:38:43  ---> Using cache
+11:38:43  ---> 1920ed0e3bec
+11:38:43 Step 4/4 : CMD ["nginx", "-g", "daemon off;"]
+11:38:43  ---> Using cache
+11:38:43  ---> 558ab87c7f3f
+11:38:43 Successfully built 558ab87c7f3f
+11:38:43 Successfully tagged app:v1
+11:38:43 REPOSITORY   TAG       IMAGE ID       CREATED          SIZE
+11:38:43 app          v1        558ab87c7f3f   7 minutes ago    176MB
+11:38:43 <none>       <none>    2a0a774e49a4   13 minutes ago   176MB
+11:38:43 <none>       <none>    3a8f28606246   15 minutes ago   176MB
+11:38:43 ubuntu       latest    74f2314a03de   9 days ago       77.8MB
+11:38:43 137bc945009caae56cc1570ef3e0ecf721f1e708915dfe4edcd3942b645634da
+11:38:43 Finished: SUCCESS
